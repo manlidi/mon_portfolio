@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marie-Didier Vicentia SANT-ANNA · Développeuse web & logiciel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fdf5f8;--surface:#ffffff;--ink:#34173a;--muted:#6f5a74;--accent:#b8336f;--accent-ink:#ffffff;--soft:#f3e4f4;--line:#ecd5e3;--blob1:#f6b8d0;--blob2:#d9c2f5;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1024;--surface:#2a1833;--ink:#fbe9f2;--muted:#c5aacb;--accent:#f08cb6;--accent-ink:#2a1030;--soft:#3a2347;--line:#4b3058;--blob1:#7a2a5a;--blob2:#4b3189;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1d1024;--surface:#2a1833;--ink:#fbe9f2;--muted:#c5aacb;--accent:#f08cb6;--accent-ink:#2a1030;--soft:#3a2347;--line:#4b3058;--blob1:#7a2a5a;--blob2:#4b3189;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,"Times New Roman",serif;line-height:1.1;margin:0;font-weight:700}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px;flex-wrap:wrap}
+nav .logo{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:1.25rem;text-decoration:none}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted)}
+nav a:hover,nav a:focus-visible{color:var(--accent)}
+button,.btn{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:8px}
+#theme{background:var(--soft);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:.9rem}
+.hero{position:relative;padding:56px 0 88px;display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
+.blob{position:absolute;border-radius:58% 42% 61% 39%/45% 55% 45% 55%;filter:blur(46px);opacity:.65;z-index:-1;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:340px;height:340px;background:var(--blob1);right:-60px;top:-30px}
+.b2{width:260px;height:260px;background:var(--blob2);left:30%;bottom:-40px;animation-delay:-6s}
+@keyframes drift{to{transform:translate(-30px,24px) rotate(40deg) scale(1.08)}}
+.hello{color:var(--accent);font-weight:700;margin:0 0 12px}
+h1{font-size:clamp(2.6rem,7.2vw,5.2rem);letter-spacing:-.02em;font-weight:500}
+h1 em{font-style:italic;color:var(--accent)}
+.nb{white-space:nowrap}
+.role{font-size:1.35rem;margin:22px 0 8px;min-height:2em}
+#word{font-family:Fraunces,Georgia,serif;font-style:italic;color:var(--accent);border-right:2px solid var(--accent);padding-right:4px}
+.lead{max-width:52ch;color:var(--muted)}
+.cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:700;padding:13px 24px;border-radius:999px;border:2px solid var(--accent)}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{color:var(--accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .2s}
+.badge{justify-self:center;width:min(280px,70vw);aspect-ratio:1;border-radius:62% 38% 55% 45%/48% 58% 42% 52%;background:linear-gradient(145deg,var(--accent),#7b4bc2);display:grid;place-items:center;color:#fff;font-family:Fraunces,Georgia,serif;font-size:5.4rem;font-style:italic;box-shadow:0 24px 60px -24px var(--accent);animation:morph 9s ease-in-out infinite alternate}
+@keyframes morph{to{border-radius:40% 60% 42% 58%/58% 42% 60% 40%}}
+.in{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}.in:nth-child(4){animation-delay:.3s}.in:nth-child(5){animation-delay:.4s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:12px;font-weight:500}
+.sub{color:var(--muted);max-width:56ch;margin:0 0 32px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.chip{background:var(--surface);border:1px solid var(--line);color:var(--ink);padding:8px 18px;border-radius:999px;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:24px 24px 24px 6px;padding:24px}
+.card h3{font-size:1.4rem;margin:8px 0}
+.card p{margin:0;color:var(--muted);font-size:.97rem}
+.tag{display:inline-block;background:var(--soft);color:var(--accent);font-weight:700;font-size:.8rem;padding:3px 12px;border-radius:999px}
+.card[hidden]{display:none}.org{margin:0 0 10px!important;font-weight:700;font-size:.85rem;color:var(--ink)!important;opacity:.75}.card ul{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:.95rem}.card li{margin-bottom:5px}@media (min-width:760px){.card.big{grid-column:span 2}}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:36px}
+.skills h3{font-size:1.25rem;margin-bottom:12px;font-style:italic;font-weight:500}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{background:var(--soft);padding:6px 14px;border-radius:999px;font-size:.93rem}
+.tl{list-style:none;margin:0;padding:0 0 0 26px;border-left:2px solid var(--accent)}
+.tl li{position:relative;padding-bottom:30px}
+.tl li::before{content:"";position:absolute;left:-35px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.tl h3{font-size:1.3rem}
+.when{color:var(--accent);font-weight:700;font-size:.92rem;margin:2px 0 6px}
+.tl p{margin:0;color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px}
+.two ul{margin:0;padding-left:20px;color:var(--muted)}
+.two li{margin-bottom:8px}.two li b{color:var(--ink)}
+.contact{text-align:center}
+.contact .sub{margin-left:auto;margin-right:auto}
+.contact .cta{justify-content:center}
+footer{text-align:center;color:var(--muted);padding:28px 0 40px;font-size:.9rem}
+@media (max-width:760px){.hero{grid-template-columns:1fr;padding-top:24px}.badge{order:-1;width:170px;font-size:3.4rem;justify-self:start}nav ul{gap:14px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.groups{display:grid;gap:52px}
+.grp[hidden]{display:none}
+.gh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 16px;padding-bottom:10px;border-bottom:2px solid var(--accent)}
+.gh h3{font-size:1.5rem;font-weight:500}
+.gh p{margin:0;color:var(--accent);font-weight:700;font-size:.9rem}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;align-items:stretch;margin-top:20px}
+.pc{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px 22px 22px 6px;padding:22px;transition:border-color .2s,transform .2s}
+.pc:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pc .tag{align-self:flex-start}
+.pc h4{font-family:Fraunces,Georgia,serif;font-size:1.3rem;font-weight:500;line-height:1.2;margin:12px 0 8px}
+.pc .pd{margin:0 0 14px;color:var(--muted);font-size:.97rem}
+.pc details{margin-top:auto;border-top:1px dashed var(--line);padding-top:12px}
+.pc summary{list-style:none;cursor:pointer;color:var(--accent);font-weight:700;font-size:.92rem;display:flex;justify-content:space-between;align-items:center}
+.pc summary::-webkit-details-marker{display:none}
+.pc summary::after{content:"+";font-size:1.4rem;line-height:1;transition:transform .25s}
+.pc details[open] summary::after{transform:rotate(45deg)}
+.pc ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.94rem}
+.pc li{margin-bottom:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+<a class="logo" href="#top">Marie-Didier</a>
+<ul>
+<li><a href="#formation">Formation</a></li>
+<li><a href="#projets">Projets</a></li>
+<li><a href="#competences">Compétences</a></li>
+<li><a href="#parcours">Parcours</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><button id="theme" type="button" aria-label="Changer de thème">Thème</button></li>
+</ul>
+</nav>
+
+<header class="hero" id="top">
+<span class="blob b1"></span><span class="blob b2"></span>
+<div>
+<p class="hello in">Bonjour, je suis</p>
+<h1 class="in"><span class="nb">Marie-Didier</span> <em>Vicentia</em> <span class="nb">SANT-ANNA</span></h1>
+<p class="role in">Je développe des <span id="word">applications web</span></p>
+<p class="lead in">Analyste programmeuse diplômée en Système Informatique et Logiciel, en Master 1 d’Intelligence artificielle et Big Data. Je conçois des outils métier fiables et agréables à utiliser, de la base de données à l’interface.</p>
+<div class="cta in"><a class="btn p" href="#projets">Voir mes projets</a><a class="btn s" href="mailto:mariesantanna114@gmail.com">Me contacter</a></div>
+</div>
+<div class="badge" aria-hidden="true">MD</div>
+</header>
+
+<section id="formation">
+<h2>Formation</h2>
+<p class="sub">Un cursus en informatique, complété par des certifications en ligne.</p>
+<div class="two">
+<ul>
+<li><b>Master 1</b> en Intelligence artificielle et Big Data, 2026</li>
+<li><b>Licence</b> en Système Informatique et Logiciel, option Architecture Logiciels, ESGIS Bénin, 2022</li>
+<li><b>Baccalauréat</b> scientifique série D, CEG Akassato, 2019</li>
+</ul>
+<ul>
+<li><a href="https://www.freecodecamp.org/certification/fccf8120d70-bcd8-4d8c-b306-23491f3aa898/responsive-web-design">Responsive Web Design, freeCodeCamp, octobre 2025</a></li>
+<li><a href="https://www.freecodecamp.org/certification/fccf8120d70-bcd8-4d8c-b306-23491f3aa898/javascript-algorithms-and-data-structures">Legacy JavaScript Algorithms and Data Structures, freeCodeCamp, juillet 2023</a></li>
+<li><a href="">Participation à la Girls-in-Tech Conference, octobre 2020</a></li>
+</ul>
+</div>
+</section>
+
+<section id="projets">
+<h2>Projets réalisés</h2>
+<p class="sub">Plus de quinze projets menés dans cinq structures. Filtrez par entreprise, puis ouvrez une carte pour voir le détail.</p>
+<div class="chips" role="group" aria-label="Filtrer les projets par entreprise">
+<button class="chip" type="button" data-f="all" aria-pressed="true">Tous</button>
+<button class="chip" type="button" data-f="homintec" aria-pressed="false">HOMINTEC</button>
+<button class="chip" type="button" data-f="gpac" aria-pressed="false">GPAC-SA</button>
+<button class="chip" type="button" data-f="kg" aria-pressed="false">KG-GROUP</button>
+<button class="chip" type="button" data-f="sobaps" aria-pressed="false">SOBAPS-SA</button>
+<button class="chip" type="button" data-f="mpd" aria-pressed="false">Ministère du Plan</button>
+</div>
+<div class="groups">
+<div class="grp" data-c="homintec"><div class="gh"><h3>HOMINTEC</h3><p>Analyste programmeuse · mars 2025 – août 2026</p></div>
+<div class="pg">
+<article class="pc"><span class="tag">Banque · Ecobank & NSIA</span><h4>HomQueue (T-Call)</h4><p class="pd">Gestion des files d’attente pour des agences bancaires, du ticket à la supervision.</p><details><summary>Voir le détail</summary><ul><li>Rédaction du DTF et proposition de la base de données</li><li>Gestion des tickets, des agences, des rôles et des permissions</li><li>Gestion des utilisateurs et de leur profil, avec modification du mot de passe</li><li>Assignation d’agences aux utilisateurs</li><li>Application mobile de gestion de la file d’attente</li></ul></details></article>
+<article class="pc"><span class="tag">Paiements mobiles</span><h4>HomCash · intégration MTN MoMo</h4><p class="pd">Un projet complet, de la lecture de la documentation à la mise en production.</p><details><summary>Voir le détail</summary><ul><li>Test en sandbox de toutes les API MTN MoMo</li><li>Réponse au questionnaire de risques de confidentialité exigé pour l’accès à l’API</li><li>Création d’une API interne, puis soumission du formulaire de go-live</li><li>Configuration et intégration en production</li><li>Tableau de bord des transactions : paiements et transferts</li></ul></details></article>
+<article class="pc"><span class="tag">Collectivité · mairie</span><h4>Application de taxes pour la mairie</h4><p class="pd">Collecte et suivi des impôts, avec une application mobile pour les collecteurs sur le terrain.</p><details><summary>Voir le détail</summary><ul><li>Gestion des utilisateurs, des boutiques, des paiements et du tableau de bord</li><li>Application mobile des collecteurs</li><li>Adaptation du SDK d’impression vers celui des nouveaux terminaux de paiement (TPE)</li><li>Présentation du projet à l’équipe commerciale</li></ul></details></article>
+<article class="pc"><span class="tag">Restauration</span><h4>Application de restaurant</h4><p class="pd">Tout le parcours d’une commande, de la prise jusqu’à l’affichage « commande prête ».</p><details><summary>Voir le détail</summary><ul><li>Proposition de la base de données et conception de l’API</li><li>Gestion des repas, extras, emballages, commandes et fournisseurs</li><li>Interfaces client, caissier et cuisinier</li><li>Présentation à l’équipe commerciale</li></ul></details></article>
+<article class="pc"><span class="tag">Appels d’offres</span><h4>OffreManager</h4><p class="pd">Suivi des appels d’offres auxquels l’entreprise répond.</p><details><summary>Voir le détail</summary><ul><li>Fournisseurs, CV, matériels et domaines de matériels</li><li>Appels d’offres et authentification</li><li>Présentation en ligne à la direction technique et aux commerciaux</li></ul></details></article>
+<article class="pc"><span class="tag">Affichage publicitaire</span><h4>Application de panneaux</h4><p class="pd">API complète pour gérer des panneaux publicitaires.</p><details><summary>Voir le détail</summary><ul><li>Conception de la base de données</li><li>Panneaux, catégories, zones, demandes et paiements</li><li>Réalisations, utilisateurs et formulaire de contact</li></ul></details></article>
+<article class="pc"><span class="tag">Monétique</span><h4>ACTS</h4><p class="pd">Supervision de terminaux de paiement.</p><details><summary>Voir le détail</summary><ul><li>Tableau de bord et statistiques</li><li>Gestion des terminaux, des devices et des débits</li></ul></details></article>
+<article class="pc"><span class="tag">Agriculture</span><h4>Gestion de stock Agrivital</h4><p class="pd">Application de suivi des stocks.</p><details><summary>Voir le détail</summary><ul><li>Mise à jour de la gestion de stock</li><li>Mise à jour du frontend pour Marvel</li></ul></details></article>
+<article class="pc"><span class="tag">Ressources humaines</span><h4>Application RH</h4><p class="pd">Demandes d’absence et de congé.</p><details><summary>Voir le détail</summary><ul><li>Gestion des permissions et validation par les différents niveaux</li><li>Génération de la permission en PDF</li></ul></details></article>
+<article class="pc"><span class="tag">Backend</span><h4>Gate24 · reprise de l’API</h4><p class="pd">Réécriture de l’API en Spring Boot.</p><details><summary>Voir le détail</summary><ul><li>Gestion de Redis</li><li>Tests des endpoints</li></ul></details></article>
+<article class="pc"><span class="tag">Systèmes distribués</span><h4>Test Kafka</h4><p class="pd">Expérimentation de l’échange de données entre serveurs.</p><details><summary>Voir le détail</summary><ul><li>Kafka avec Spring Boot et Docker</li><li>Envoi de fichiers lourds et synchronisation de bases de données distribuées</li></ul></details></article>
+<article class="pc"><span class="tag">Sites web</span><h4>Site HOMINTEC et UKDataAfrica</h4><p class="pd">Sites vitrines et leurs espaces d’administration.</p><details><summary>Voir le détail</summary><ul><li>Réalisations, services, galerie, événements, staff</li><li>Mot de passe oublié, tableau de bord, vue client</li></ul></details></article>
+</div>
+</div>
+<div class="grp" data-c="gpac"><div class="gh"><h3>GPAC-SA</h3><p>Développeuse d’applications · avril – septembre 2024</p></div>
+<div class="pg">
+<article class="pc"><span class="tag">Ressources humaines</span><h4>EPerformance</h4><p class="pd">Application interne d’évaluation des performances des employés.</p><details><summary>Voir le détail</summary><ul><li>Suivi et gestion des tâches quotidiennes de chaque employé</li></ul></details></article>
+<article class="pc"><span class="tag">Notifications</span><h4>EAlert</h4><p class="pd">Application interne d’alertes automatiques.</p><details><summary>Voir le détail</summary><ul><li>Rappel automatique des échéances importantes</li></ul></details></article>
+</div>
+</div>
+<div class="grp" data-c="kg"><div class="gh"><h3>KG-GROUP</h3><p>Développeuse d’applications · octobre 2023 – mars 2024</p></div>
+<div class="pg">
+<article class="pc"><span class="tag">Messagerie</span><h4>Plateforme de chat en temps réel</h4><p class="pd">Contribution au développement d’une plateforme de communication.</p><details><summary>Voir le détail</summary><ul><li>Envoi de messages</li><li>Appels audio</li><li>Appels vidéo</li></ul></details></article>
+</div>
+</div>
+<div class="grp" data-c="sobaps"><div class="gh"><h3>SOBAPS-SA</h3><p>Stagiaire informatique · avril – septembre 2023</p></div>
+<div class="pg">
+<article class="pc"><span class="tag">Web & sécurité</span><h4>Site web et sécurité informatique</h4><p class="pd">Un stage polyvalent entre développement et infrastructure.</p><details><summary>Voir le détail</summary><ul><li>Mise à jour du site de la SOBAPS SA</li><li>Maintenance préventive et curative du parc informatique</li><li>Analyse des risques en matière de sécurité informatique</li></ul></details></article>
+</div>
+</div>
+<div class="grp" data-c="mpd"><div class="gh"><h3>Ministère du Plan et du Développement</h3><p>Stagiaire informatique · septembre 2022 – février 2023</p></div>
+<div class="pg">
+<article class="pc"><span class="tag">Logistique</span><h4>GestParc</h4><p class="pd">Application interne de gestion du parc automobile du ministère.</p><details><summary>Voir le détail</summary><ul><li>Traçabilité des mouvements des véhicules</li></ul></details></article>
+<article class="pc"><span class="tag">Formation</span><h4>Plateforme de gestion des formations</h4><p class="pd">Outil de gestion des formations au sein du ministère.</p></article>
+</div>
+</div>
+</div>
+</section>
+
+<section id="competences">
+<h2>Compétences</h2>
+<p class="sub">Une base solide en développement, en données et en conception logicielle.</p>
+<div class="skills">
+<div><h3>Développement</h3><div class="pills"><span>JavaScript</span><span>React</span><span>NestJS</span><span>PHP</span><span>Laravel</span><span>Python</span><span>Django</span><span>Spring Boot</span><span>Angular</span><span>Flutter</span><span>Docker</span><span>Git</span></div></div>
+<div><h3>Bases de données</h3><div class="pills"><span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>Oracle</span><span>PL/SQL</span><span>Procédures stockées</span><span>Optimisation de requêtes</span></div></div>
+<div><h3>Conception</h3><div class="pills"><span>Architecture logicielle</span><span>UML / Merise</span><span>Cycle de vie logiciel</span><span>Applications intelligentes</span></div></div>
+<div><h3>Langues</h3><div class="pills"><span>Français · natif</span><span>Anglais · intermédiaire</span></div></div>
+</div>
+</section>
+
+<section id="parcours">
+<h2>Parcours</h2>
+<p class="sub">Quatre ans d’expérience, stages compris.</p>
+<ol class="tl">
+<li><h3>HOMINTEC</h3><p class="when">Analyste programmeuse · mars 2025 – août 2026</p><p>Plus de dix projets : files d’attente bancaires, paiements MTN MoMo, collecte de taxes, appels d’offres, API et sites web.</p></li>
+<li><h3>GPAC-SA</h3><p class="when">Développeuse d’applications · avril – septembre 2024</p><p>EPerformance et EAlert.</p></li>
+<li><h3>KG-GROUP</h3><p class="when">Développeuse d’applications · octobre 2023 – mars 2024</p><p>Plateforme de chat en temps réel.</p></li>
+<li><h3>SOBAPS-SA</h3><p class="when">Stagiaire informatique · avril – septembre 2023</p><p>Mise à jour du site, maintenance du parc informatique, analyse des risques de sécurité.</p></li>
+<li><h3>Ministère du Plan et du Développement</h3><p class="when">Stagiaire informatique · septembre 2022 – février 2023</p><p>GestParc et plateforme de gestion des formations.</p></li>
+</ol>
+</section>
+
+<section id="contact" class="contact">
+<h2>Travaillons ensemble</h2>
+<p class="sub">Une application, un site ou une plateforme à construire ? Écrivez-moi, je réponds avec plaisir.</p>
+<div class="cta"><a class="btn p" href="mailto:mariesantanna114@gmail.com">Envoyer un e-mail</a><a class="btn s" href="https://www.linkedin.com/in/marie-didier-vicentia-sant-anna-51b213231" target="_blank" rel="noopener">LinkedIn</a><a class="btn s" href="https://github.com/manlidi" target="_blank" rel="noopener">GitHub</a></div>
+</section>
+</div>
+<footer>© 2026 Marie-Didier Vicentia <span class="nb">SANT-ANNA</span></footer>
+
+<script>
+(function(){
+var words=["applications web","outils métier","plateformes de gestion","interfaces claires"],i=0,j=0,del=false,el=document.getElementById("word");
+var still=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function tick(){
+var w=words[i];
+el.textContent=w.slice(0,j);
+if(!del&&j<w.length){j++;setTimeout(tick,85)}
+else if(!del){del=true;setTimeout(tick,1500)}
+else if(j>0){j--;setTimeout(tick,45)}
+else{del=false;i=(i+1)%words.length;setTimeout(tick,300)}
+}
+if(!still){j=0;tick()}
+var chips=document.querySelectorAll(".chip"),cards=document.querySelectorAll(".grp");
+chips.forEach(function(c){c.addEventListener("click",function(){
+chips.forEach(function(x){x.setAttribute("aria-pressed","false")});
+c.setAttribute("aria-pressed","true");
+var f=c.getAttribute("data-f");
+cards.forEach(function(k){k.hidden=!(f==="all"||k.getAttribute("data-c").split(" ").indexOf(f)>-1)});
+})});
+var root=document.documentElement;
+document.getElementById("theme").addEventListener("click",function(){
+var dark=root.getAttribute("data-theme")==="dark"||(root.getAttribute("data-theme")!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);
+root.setAttribute("data-theme",dark?"light":"dark");
+});
+})();
+</script>
+</body>
+</html>
