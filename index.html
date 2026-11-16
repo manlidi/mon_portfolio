@@ -97,6 +97,16 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px;font-size:.9rem}
 .pc details[open] summary::after{transform:rotate(45deg)}
 .pc ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:.94rem}
 .pc li{margin-bottom:5px}
+.badge{position:relative;overflow:hidden}
+.badge img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+dialog{border:1px solid var(--line);padding:0;background:var(--surface);color:var(--ink);border-radius:24px;width:min(92vw,820px);max-height:90vh;overflow:auto}
+dialog::backdrop{background:rgba(20,8,26,.78)}
+.dlg{padding:56px 20px 20px;text-align:center}
+.dlg img{display:block;max-width:100%;max-height:68vh;margin:0 auto;border-radius:14px}
+.dlg p{margin:14px 0 0;color:var(--muted);font-size:.95rem}
+.dlg .nopic{display:none;padding:40px 0;color:var(--muted)}
+.dclose{position:absolute;top:14px;right:14px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:9px 18px;font-weight:700}
+dialog{position:fixed}
 </style>
 </head>
 <body>
@@ -120,9 +130,9 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px;font-size:.9rem}
 <h1 class="in"><span class="nb">Marie-Didier</span> <em>Vicentia</em> <span class="nb">SANT-ANNA</span></h1>
 <p class="role in">Je développe des <span id="word">applications web</span></p>
 <p class="lead in">Analyste programmeuse diplômée en Système Informatique et Logiciel, en Master 1 d’Intelligence artificielle et Big Data. Je conçois des outils métier fiables et agréables à utiliser, de la base de données à l’interface.</p>
-<div class="cta in"><a class="btn p" href="#projets">Voir mes projets</a><a class="btn s" href="mailto:mariesantanna114@gmail.com">Me contacter</a></div>
+<div class="cta in"><a class="btn p" href="#projets">Voir mes projets</a><a class="btn s" href="asset/cv.pdf" download="CV-Marie-Didier-Vicentia-SANT-ANNA.pdf">Télécharger CV</a><a class="btn s" href="mailto:mariesantanna114@gmail.com">Me contacter</a></div>
 </div>
-<div class="badge" aria-hidden="true">MD</div>
+<div class="badge">MD<img src="asset/img.JPG" alt="Portrait de Marie-Didier Vicentia SANT-ANNA" onerror="this.remove()"></div>
 </header>
 
 <section id="formation">
@@ -137,7 +147,7 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px;font-size:.9rem}
 <ul>
 <li><a href="https://www.freecodecamp.org/certification/fccf8120d70-bcd8-4d8c-b306-23491f3aa898/responsive-web-design">Responsive Web Design, freeCodeCamp, octobre 2025</a></li>
 <li><a href="https://www.freecodecamp.org/certification/fccf8120d70-bcd8-4d8c-b306-23491f3aa898/javascript-algorithms-and-data-structures">Legacy JavaScript Algorithms and Data Structures, freeCodeCamp, juillet 2023</a></li>
-<li><a href="">Participation à la Girls-in-Tech Conference, octobre 2020</a></li>
+<li><a href="asset/cert.png" id="git-link">Participation à la Girls-in-Tech Conference, octobre 2020</a></li>
 </ul>
 </div>
 </section>
@@ -221,11 +231,15 @@ footer{text-align:center;color:var(--muted);padding:28px 0 40px;font-size:.9rem}
 <section id="contact" class="contact">
 <h2>Travaillons ensemble</h2>
 <p class="sub">Une application, un site ou une plateforme à construire ? Écrivez-moi, je réponds avec plaisir.</p>
-<div class="cta"><a class="btn p" href="mailto:mariesantanna114@gmail.com">Envoyer un e-mail</a><a class="btn s" href="https://www.linkedin.com/in/marie-didier-vicentia-sant-anna-51b213231" target="_blank" rel="noopener">LinkedIn</a><a class="btn s" href="https://github.com/manlidi" target="_blank" rel="noopener">GitHub</a></div>
+<div class="cta"><a class="btn p" href="mailto:mariesantanna114@gmail.com">Envoyer un e-mail</a><a class="btn s" href="asset/cv.pdf" download="CV-Marie-Didier-Vicentia-SANT-ANNA.pdf">Télécharger CV</a><a class="btn s" href="https://www.linkedin.com/in/marie-didier-vicentia-sant-anna-51b213231" target="_blank" rel="noopener">LinkedIn</a><a class="btn s" href="https://github.com/manlidi" target="_blank" rel="noopener">GitHub</a></div>
 </section>
 </div>
 <footer>© 2026 Marie-Didier Vicentia <span class="nb">SANT-ANNA</span></footer>
 
+<dialog id="git-dialog" aria-label="Girls-in-Tech Conference">
+<button class="dclose" type="button" id="git-close">✕</button>
+<div class="dlg"><img src="asset/cert.png" alt="Marie-Didier à la Girls-in-Tech Conference, octobre 2020" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="nopic">Photo bientôt disponible.</div><p>Girls-in-Tech Conference · octobre 2020</p></div>
+</dialog>
 <script>
 (function(){
 var words=["applications web","outils métier","plateformes de gestion","interfaces claires"],i=0,j=0,del=false,el=document.getElementById("word");
@@ -246,6 +260,10 @@ c.setAttribute("aria-pressed","true");
 var f=c.getAttribute("data-f");
 cards.forEach(function(k){k.hidden=!(f==="all"||k.getAttribute("data-c").split(" ").indexOf(f)>-1)});
 })});
+var gd=document.getElementById("git-dialog");
+document.getElementById("git-link").addEventListener("click",function(e){e.preventDefault();gd.showModal()});
+document.getElementById("git-close").addEventListener("click",function(){gd.close()});
+gd.addEventListener("click",function(e){if(e.target===gd)gd.close()});
 var root=document.documentElement;
 document.getElementById("theme").addEventListener("click",function(){
 var dark=root.getAttribute("data-theme")==="dark"||(root.getAttribute("data-theme")!=="light"&&window.matchMedia("(prefers-color-scheme: dark)").matches);
